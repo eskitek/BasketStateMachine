@@ -13,6 +13,16 @@ namespace BasketStateMachine
         BasketState State { get; }
     }
 
+    public interface IBasketRepository
+    {
+        void AddItem();
+        void RemoveItem();
+
+        object Checkout();
+
+        object Archive();
+    }
+
     public enum BasketState
     {
         Empty,

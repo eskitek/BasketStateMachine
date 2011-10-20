@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="BasketTests_ContainsStuff.cs" />
     <Compile Include="BasketTests_Empty.cs" />
+    <Compile Include="BasketTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

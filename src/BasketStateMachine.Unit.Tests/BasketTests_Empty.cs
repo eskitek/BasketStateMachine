@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
+using Rhino.Mocks;
 
 namespace BasketStateMachine.Unit.Tests
 {
@@ -6,21 +8,27 @@ namespace BasketStateMachine.Unit.Tests
     public class Given_that_state_is_Empty
     {
         private IBasket _basket;
+        private IBasketRepository _basketRepository;
 
         [SetUp]
         public void SetUpTest()
         {
-            _basket = new Basket();
-        }
-
-        [Test]
-        public void Given_that_a_basket_has_just_been_created_then_state_is_Empty()
-        {
+            _basketRepository = MockRepository.GenerateStub<IBasketRepository>();
+            _basket = new Basket(_basketRepository);
             Assert.That(_basket.State, Is.EqualTo(BasketState.Empty));
+            Console.WriteLine();
         }
 
         [Test]
-        public void When_item_is_added_to_basket_then_state_is_changed_to_ContainsStuff()
+        public void When_AddItem_is_called_then_adds_item()
+        {
+            _basket.AddItem();
+
+            _basketRepository.AssertWasCalled(r=>r.AddItem());
+        }
+
+        [Test]
+        public void When_AddItem_is_called_then_changes_state_to_ContainsStuff()
         {
             _basket.AddItem();
 
@@ -28,7 +36,15 @@ namespace BasketStateMachine.Unit.Tests
         }
 
         [Test]
-        public void When_item_is_removed_from_basket_then_state_remains_Empty()
+        public void When_RemoveItem_is_called_then_does_not_remove_item()
+        {
+            _basket.RemoveItem();
+
+            _basketRepository.AssertWasNotCalled(r => r.RemoveItem());
+        }
+
+        [Test]
+        public void When_RemoveItem_is_called_then_does_not_change_state()
         {
             _basket.RemoveItem();
 
@@ -36,7 +52,15 @@ namespace BasketStateMachine.Unit.Tests
         }
 
         [Test]
-        public void When_checkout_is_called_then_state_remains_Empty()
+        public void When_Checkout_is_called_then_does_not_checkout()
+        {
+            _basket.Checkout();
+
+            _basketRepository.AssertWasNotCalled(r => r.Checkout());
+        }
+
+        [Test]
+        public void When_Checkout_is_called_then_does_not_change_state()
         {
             _basket.Checkout();
 
@@ -44,7 +68,15 @@ namespace BasketStateMachine.Unit.Tests
         }
 
         [Test]
-        public void When_archive_is_called_then_state_changes_to_Archived()
+        public void When_Archive_is_called_then_archives()
+        {
+            _basket.Archive();
+
+            _basketRepository.AssertWasCalled(r => r.Archive());
+        }
+
+        [Test]
+        public void When_Archive_is_called_then_changes_state_to_Archived()
         {
             _basket.Archive();
 

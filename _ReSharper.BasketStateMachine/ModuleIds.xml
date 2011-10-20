@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="8C59B85A-9380-4FDB-82D4-9EF11301EEB3" ModuleId="BasketStateMachine.Unit.Tests" />
+  <Module PersistentId="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A" ModuleId="BasketStateMachine" />
+</Modules>

@@ -1,0 +1,138 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A/f:Program.cs" caret="13" fromTop="0" />
+      <File id="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A/f:BasketForm.Designer.cs" caret="1177" fromTop="23" />
+      <File id="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A/f:BasketForm.cs" caret="363" fromTop="16" />
+      <File id="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A/f:IBasket.cs" caret="180" fromTop="11" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_ContainsStuff.cs" caret="771" fromTop="27" />
+      <File id="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A/f:Basket.cs" caret="826" fromTop="13" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_Empty.cs" caret="1410" fromTop="53" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A/f:IBasket.cs" caret="53" fromTop="2" />
+      <File id="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A/f:IBasket.cs" caret="190" fromTop="12" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_Empty.cs" caret="190" fromTop="8" />
+      <File id="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A/f:Basket.cs" caret="83" fromTop="2" />
+      <File id="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A/f:Basket.cs" caret="938" fromTop="31" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_Empty.cs" caret="272" fromTop="7" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_Empty.cs" caret="955" fromTop="30" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_Empty.cs" caret="955" fromTop="29" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_Empty.cs" caret="955" fromTop="32" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_Empty.cs" caret="955" fromTop="28" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_Empty.cs" caret="379" fromTop="11" />
+      <File id="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A/f:Basket.cs" caret="602" fromTop="25" />
+      <File id="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A/f:Basket.cs" caret="558" fromTop="20" />
+      <File id="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A/f:Basket.cs" caret="652" fromTop="25" />
+      <File id="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A/f:Basket.cs" caret="157" fromTop="8" />
+      <File id="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A/f:Basket.cs" caret="556" fromTop="23" />
+      <File id="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A/f:Basket.cs" caret="415" fromTop="19" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_Empty.cs" caret="22" fromTop="0" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_ContainsStuff.cs" caret="106" fromTop="5" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_ContainsStuff.cs" caret="332" fromTop="16" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_ContainsStuff.cs" caret="629" fromTop="25" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_Empty.cs" caret="131" fromTop="5" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_Empty.cs" caret="521" fromTop="22" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_Empty.cs" caret="766" fromTop="30" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_Empty.cs" caret="1174" fromTop="43" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_Empty.cs" caret="1018" fromTop="26" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_Empty.cs" caret="1386" fromTop="26" />
+      <File id="8C59B85A-9380-4FDB-82D4-9EF11301EEB3/f:BasketTests_Empty.cs" caret="1312" fromTop="24" />
+      <File id="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A/f:Basket.cs" caret="730" fromTop="9" />
+      <File id="5A996D88-9E86-404B-9EF1-FD10CEFB5A9A/f:Basket.cs" caret="826" fromTop="13" />
+    </RecentEdits>
+  </RecentFiles>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="public" priority="95" />
+      <Item value="void" priority="95" />
+      <Item value="var" priority="31" />
+      <Item value="new" priority="63" />
+      <Item value="Assert`0" priority="31" />
+      <Item value="Is`0" priority="31" />
+      <Item value="BasketState`0" priority="63" />
+      <Item value="class" priority="31" />
+      <Item value="TestFixture" priority="31" />
+      <Item value="SetUp" priority="31" />
+      <Item value="b" priority="31" />
+      <Item value="Empty" priority="16" />
+      <Item value="State" priority="91" />
+      <Item value="IBasket`0" priority="31" />
+      <Item value="this" priority="31" />
+      <Item value="ContainsStuff" priority="16" />
+      <Item value="_basket" priority="31" />
+      <Item value="Basket" priority="28" />
+      <Item value="if" priority="63" />
+      <Item value="ItemCount" priority="63" />
+      <Item value="else" priority="31" />
+      <Item value="Archived" priority="16" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Rhino.Mocks.MockRepository">
+      <Item value="GenerateMock`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
+      <Item value="That`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Is">
+      <Item value="EqualTo`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@BasketStateMachine.BasketState">
+      <Item value="Empty" priority="80" />
+      <Item value="ContainsStuff" priority="53" />
+      <Item value="Archived" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BasketStateMachine.IBasket">
+      <Item value="Stub`1" priority="26" />
+      <Item value="State" priority="53" />
+      <Item value="AddItem`0" priority="26" />
+      <Item value="RemoveItem`0" priority="26" />
+      <Item value="Checkout`0" priority="26" />
+      <Item value="Archive`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Rhino.Mocks.Interfaces.IMethodOptions`1">
+      <Item value="Return`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="Out" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.TextWriter">
+      <Item value="WriteLine`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:BasketStateMachine.Basket">
+      <Item value="State" priority="26" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.5.10\bin\net-2.0\lib</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <UnitTestSessions>
+    <Session>
+      <Name>Session #1</Name>
+      <Elements>
+        <UnitTestElement Provider="nUnit" Id="BasketStateMachine.Unit.Tests.Given_that_state_is_ContainsStuff" type="NUnitTestFixtureElement" Project="8C59B85A-9380-4FDB-82D4-9EF11301EEB3" />
+        <UnitTestElement Provider="nUnit" Id="BasketStateMachine.Unit.Tests.Given_that_state_is_Empty" type="NUnitTestFixtureElement" Project="8C59B85A-9380-4FDB-82D4-9EF11301EEB3" />
+        <UnitTestElement Provider="nUnit" Id="BasketStateMachine.Unit.Tests.Given_that_state_is_ContainsStuff.And_basket_contains_more_than_one_item_when_item_is_removed_from_basket_then_state_does_not_change" ParentId="BasketStateMachine.Unit.Tests.Given_that_state_is_ContainsStuff" type="NUnitTestElement" TypeName="BasketStateMachine.Unit.Tests.Given_that_state_is_ContainsStuff" MethodName="And_basket_contains_more_than_one_item_when_item_is_removed_from_basket_then_state_does_not_change" Project="8C59B85A-9380-4FDB-82D4-9EF11301EEB3" />
+        <UnitTestElement Provider="nUnit" Id="BasketStateMachine.Unit.Tests.Given_that_state_is_ContainsStuff.And_basket_contains_one_item_when_item_is_removed_from_basket_then_state_is_changed_to_Empty" ParentId="BasketStateMachine.Unit.Tests.Given_that_state_is_ContainsStuff" type="NUnitTestElement" TypeName="BasketStateMachine.Unit.Tests.Given_that_state_is_ContainsStuff" MethodName="And_basket_contains_one_item_when_item_is_removed_from_basket_then_state_is_changed_to_Empty" Project="8C59B85A-9380-4FDB-82D4-9EF11301EEB3" />
+        <UnitTestElement Provider="nUnit" Id="BasketStateMachine.Unit.Tests.Given_that_state_is_Empty.Given_that_a_basket_has_just_been_created_then_state_is_Empty" ParentId="BasketStateMachine.Unit.Tests.Given_that_state_is_Empty" type="NUnitTestElement" TypeName="BasketStateMachine.Unit.Tests.Given_that_state_is_Empty" MethodName="Given_that_a_basket_has_just_been_created_then_state_is_Empty" Project="8C59B85A-9380-4FDB-82D4-9EF11301EEB3" />
+        <UnitTestElement Provider="nUnit" Id="BasketStateMachine.Unit.Tests.Given_that_state_is_Empty.When_archive_is_called_then_state_changes_to_Archived" ParentId="BasketStateMachine.Unit.Tests.Given_that_state_is_Empty" type="NUnitTestElement" TypeName="BasketStateMachine.Unit.Tests.Given_that_state_is_Empty" MethodName="When_archive_is_called_then_state_changes_to_Archived" Project="8C59B85A-9380-4FDB-82D4-9EF11301EEB3" />
+        <UnitTestElement Provider="nUnit" Id="BasketStateMachine.Unit.Tests.Given_that_state_is_Empty.When_checkout_is_called_then_state_remains_Empty" ParentId="BasketStateMachine.Unit.Tests.Given_that_state_is_Empty" type="NUnitTestElement" TypeName="BasketStateMachine.Unit.Tests.Given_that_state_is_Empty" MethodName="When_checkout_is_called_then_state_remains_Empty" Project="8C59B85A-9380-4FDB-82D4-9EF11301EEB3" />
+        <UnitTestElement Provider="nUnit" Id="BasketStateMachine.Unit.Tests.Given_that_state_is_Empty.When_item_is_added_to_basket_then_state_is_changed_to_ContainsStuff" ParentId="BasketStateMachine.Unit.Tests.Given_that_state_is_Empty" type="NUnitTestElement" TypeName="BasketStateMachine.Unit.Tests.Given_that_state_is_Empty" MethodName="When_item_is_added_to_basket_then_state_is_changed_to_ContainsStuff" Project="8C59B85A-9380-4FDB-82D4-9EF11301EEB3" />
+        <UnitTestElement Provider="nUnit" Id="BasketStateMachine.Unit.Tests.Given_that_state_is_Empty.When_item_is_removed_from_basket_then_state_remains_Empty" ParentId="BasketStateMachine.Unit.Tests.Given_that_state_is_Empty" type="NUnitTestElement" TypeName="BasketStateMachine.Unit.Tests.Given_that_state_is_Empty" MethodName="When_item_is_removed_from_basket_then_state_remains_Empty" Project="8C59B85A-9380-4FDB-82D4-9EF11301EEB3" />
+      </Elements>
+    </Session>
+  </UnitTestSessions>
+</Configuration>

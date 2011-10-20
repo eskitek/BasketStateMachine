@@ -1,0 +1,8 @@
+C:\Code\BasketStateMachine\src\BasketStateMachine\bin\Debug\BasketStateMachine.exe
+C:\Code\BasketStateMachine\src\BasketStateMachine\bin\Debug\BasketStateMachine.pdb
+C:\Code\BasketStateMachine\src\BasketStateMachine\obj\Debug\ResolveAssemblyReference.cache
+C:\Code\BasketStateMachine\src\BasketStateMachine\obj\Debug\BasketStateMachine.Properties.Resources.resources
+C:\Code\BasketStateMachine\src\BasketStateMachine\obj\Debug\GenerateResource.read.1.tlog
+C:\Code\BasketStateMachine\src\BasketStateMachine\obj\Debug\GenerateResource.write.1.tlog
+C:\Code\BasketStateMachine\src\BasketStateMachine\obj\Debug\BasketStateMachine.exe
+C:\Code\BasketStateMachine\src\BasketStateMachine\obj\Debug\BasketStateMachine.pdb

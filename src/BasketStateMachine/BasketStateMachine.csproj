@@ -73,7 +73,9 @@
     <Compile Include="BasketForm.Designer.cs">
       <DependentUpon>BasketForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BasketRepository.cs" />
     <Compile Include="IBasket.cs" />
+    <Compile Include="IBasketRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

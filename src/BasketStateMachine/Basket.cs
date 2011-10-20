@@ -8,65 +8,71 @@ namespace BasketStateMachine
 
         private int _itemCount;
 
+        private BasketState _state;
+
+        public BasketState State
+        {
+            get { return _state; }
+            private set
+            {
+                if(_state == value)
+                {
+                    return;
+                }
+                _state = value;
+                Console.Out.WriteLine(string.Format(">>State changed to {0}.", _state));
+            }
+        }
+
         public Basket(IBasketRepository basketRepository)
         {
             _basketRepository = basketRepository;
-            Console.Out.WriteLine(string.Format(">>State initilised to {0}.", State));
         }
 
         public void AddItem()
         {
-            Console.Out.WriteLine("AddItem called.");
-            _itemCount++;
-            Console.Out.WriteLine(">>Added item to basket.");
-            _basketRepository.AddItem();
-            State = BasketState.ContainsStuff;
-            Console.Out.WriteLine(string.Format(">>Changed state to {0}.", State));
+            Console.Out.WriteLine("Basket.AddItem called.");
+
+            if (State == BasketState.Empty ||
+                State == BasketState.ContainsStuff)
+            {
+                _basketRepository.AddItem();
+                _itemCount++;
+                State = BasketState.ContainsStuff;
+            }
         }
 
         public void RemoveItem()
         {
-            Console.Out.WriteLine("RemoveItem called.");
+            Console.Out.WriteLine("Basket.RemoveItem called.");
             if (State == BasketState.ContainsStuff)
             {
-                _itemCount--;
                 _basketRepository.RemoveItem();
-                Console.Out.WriteLine(">>Removed item from basket.");
+                _itemCount--;
 
                 if (_itemCount == 0)
                 {
                     State = BasketState.Empty;
-                    Console.Out.WriteLine(string.Format(">>Changed state to {0}.", State));
                 }
             }
         }
 
         public void Checkout()
         {
-            Console.Out.WriteLine("Checkout called.");
+            Console.Out.WriteLine("Basket.Checkout called.");
 
             if (State == BasketState.ContainsStuff)
             {
                 _basketRepository.Checkout();
-                Console.Out.WriteLine(">>Checked out basket.");
                 State = BasketState.CheckedOut;
-                Console.Out.WriteLine(string.Format(">>Changed state to {0}.", State));
             }
         }
 
         public void Archive()
         {
-            Console.Out.WriteLine("Archive called.");
+            Console.Out.WriteLine("Basket.Archive called.");
             _basketRepository.Archive();
-            Console.Out.WriteLine(">>Archived basket.");
             State = BasketState.Archived;
-            Console.Out.WriteLine(string.Format(">>Changed state to {0}.", State));
-        }
-
-        public BasketState State
-        {
-            get;
-            private set;
         }
     }
 }

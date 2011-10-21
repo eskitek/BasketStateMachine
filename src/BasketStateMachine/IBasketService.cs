@@ -10,13 +10,4 @@ namespace BasketStateMachine
 
         void Archive(int basketId);
     }
-
-    public enum BasketState
-    {
-        Empty,
-        ContainsStuff,
-        CheckedOut,
-        Archived,
-        Unknown
-    }
 }

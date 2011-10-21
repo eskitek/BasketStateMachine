@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BasketStateMachine
+﻿namespace BasketStateMachine
 {
     public class BasketService : IBasketService
     {

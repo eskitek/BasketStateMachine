@@ -1,4 +1,5 @@
 ﻿using System;
+using BasketStateMachine.BasketStates;
 using NUnit.Framework;
 
 namespace BasketStateMachine.Unit.Tests

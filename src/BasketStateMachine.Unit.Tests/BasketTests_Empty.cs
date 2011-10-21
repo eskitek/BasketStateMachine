@@ -1,4 +1,5 @@
 ﻿using System;
+using BasketStateMachine.BasketStates;
 using NUnit.Framework;
 
 namespace BasketStateMachine.Unit.Tests
@@ -37,7 +38,7 @@ namespace BasketStateMachine.Unit.Tests
         {
             var exception = Assert.Throws<InvalidOperationException>(() => _basket.RemoveItem(99));
 
-            Assert.That(exception.Message, Is.EqualTo(EmptyState.REMOVE_ERROR_MESSAGE));
+            Assert.That(exception.Message, Is.EqualTo(EmptyStateBase.REMOVE_ERROR_MESSAGE));
         }
 
         [Test]
@@ -45,7 +46,7 @@ namespace BasketStateMachine.Unit.Tests
         {
             var exception = Assert.Throws<InvalidOperationException>(() => _basket.CheckOut());
 
-            Assert.That(exception.Message, Is.EqualTo(EmptyState.CHECKOUT_ERROR_MESSAGE));
+            Assert.That(exception.Message, Is.EqualTo(EmptyStateBase.CHECKOUT_ERROR_MESSAGE));
         }
 
         [Test]

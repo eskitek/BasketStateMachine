@@ -1,8 +1,8 @@
 using System.Linq;
 
-namespace BasketStateMachine
+namespace BasketStateMachine.BasketStates
 {
-    public class ContainsStuffState : BasketStateNew
+    public class ContainsStuffState : BasketStateBase
     {
         public ContainsStuffState(IBasket basket)
             : base(basket)
@@ -26,7 +26,7 @@ namespace BasketStateMachine
 
             _basket.Items.Remove(itemToRemove);
 
-            if (_basket.ItemCount == 0)
+            if (_basket.Items.Count == 0)
             {
                 _basket.State = BasketState.Empty;
             }

@@ -1,8 +1,8 @@
 using System;
 
-namespace BasketStateMachine
+namespace BasketStateMachine.BasketStates
 {
-    public class ArchivedState : BasketStateNew
+    public class ArchivedState : BasketStateBase
     {
         public const string ADD_ERROR_MESSAGE = "Can't add an item to a basket that's been archived.";
         public const string REMOVE_ERROR_MESSAGE = "Can't remove an item from a basket that's been archived.";

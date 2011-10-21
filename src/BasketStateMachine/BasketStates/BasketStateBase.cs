@@ -1,10 +1,10 @@
-namespace BasketStateMachine
+namespace BasketStateMachine.BasketStates
 {
-    public abstract class BasketStateNew
+    public abstract class BasketStateBase
     {
         protected readonly IBasket _basket;
 
-        protected BasketStateNew(IBasket basket)
+        protected BasketStateBase(IBasket basket)
         {
             _basket = basket;
         }

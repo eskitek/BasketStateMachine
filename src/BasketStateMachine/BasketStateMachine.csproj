@@ -61,17 +61,19 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArchivedState.cs" />
     <Compile Include="Basket.cs" />
     <Compile Include="BasketService.cs" />
     <Compile Include="BasketRepository.cs" />
-    <Compile Include="BasketState.cs" />
-    <Compile Include="CheckedOutState.cs" />
-    <Compile Include="ContainsStuffState.cs" />
-    <Compile Include="EmptyState.cs" />
+    <Compile Include="BasketStateFactory.cs" />
+    <Compile Include="BasketStates\ArchivedState.cs" />
+    <Compile Include="BasketStates\BasketStateBase.cs" />
+    <Compile Include="BasketStates\CheckedOutState.cs" />
+    <Compile Include="BasketStates\ContainsStuffState.cs" />
+    <Compile Include="BasketStates\EmptyStateBase.cs" />
     <Compile Include="IBasket.cs" />
     <Compile Include="IBasketService.cs" />
     <Compile Include="IBasketRepository.cs" />
+    <Compile Include="IBasketStateFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

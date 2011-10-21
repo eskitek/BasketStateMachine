@@ -6,7 +6,6 @@ namespace BasketStateMachine
     {
         int Id { get; set; }
         BasketState State { get; set; }
-        int ItemCount { get; }
         IList<BasketItem> Items { get; set; }
         void AddItem(int itemId);
         void RemoveItem(int itemId);

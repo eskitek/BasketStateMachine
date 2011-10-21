@@ -1,13 +1,13 @@
 using System;
 
-namespace BasketStateMachine
+namespace BasketStateMachine.BasketStates
 {
-    public class EmptyState : BasketStateNew
+    public class EmptyStateBase : BasketStateBase
     {
         public const string REMOVE_ERROR_MESSAGE = "Can't remove an item from an empty basket.";
         public const string CHECKOUT_ERROR_MESSAGE = "Can't check out an empty basket.";
 
-        public EmptyState(IBasket basket)
+        public EmptyStateBase(IBasket basket)
             : base(basket)
         {
         }
@@ -16,7 +16,7 @@ namespace BasketStateMachine
         {
             var item = new BasketItem { Id = itemId };
             _basket.Items.Add(item);
-            _basket.State = BasketState.ContainsStuff;
+            _basket.State = BasketStateMachine.BasketState.ContainsStuff;
         }
 
         public override void RemoveItem(int itemId)
@@ -31,7 +31,7 @@ namespace BasketStateMachine
 
         public override void Archive()
         {
-            _basket.State = BasketState.Archived;
+            _basket.State = BasketStateMachine.BasketState.Archived;
         }
     }
 }

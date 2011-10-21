@@ -1,1 +1,7 @@
 *ReSharper*
+*.user
+*.suo
+obj
+bin
+*~HEAD
+**/*~HEAD

@@ -1,0 +1,21 @@
+namespace BasketStateMachine
+{
+    public interface IBasketService
+    {
+        void AddItem(int basketId, int itemId);
+
+        void RemoveItem(int basketId, int itemId);
+
+        void Checkout(int basketId);
+
+        void Archive(int basketId);
+    }
+
+    public enum BasketState
+    {
+        Empty,
+        ContainsStuff,
+        CheckedOut,
+        Archived
+    }
+}

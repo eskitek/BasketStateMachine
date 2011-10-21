@@ -7,90 +7,98 @@ namespace BasketStateMachine.Unit.Tests
     [TestFixture]
     public class Given_that_state_is_ContainsStuff
     {
-        private IBasket _basket;
-        private IBasketRepository _basketRepository;
+        private IBasketService _basketService;
+        private IBasketRepository _basketRepositoryStub;
+        private IBasket _basketStub;
 
         [SetUp]
         public void SetUpTest()
         {
-            _basketRepository = MockRepository.GenerateStub<IBasketRepository>();
-            _basket = new Basket(_basketRepository);
-            _basket.AddItem();
-            Assert.That(_basket.State, Is.EqualTo(BasketState.ContainsStuff));
+            _basketStub = MockRepository.GenerateStub<Basket>();
+            _basketStub.State = BasketState.ContainsStuff;
+
+            _basketRepositoryStub = MockRepository.GenerateStub<IBasketRepository>();
+            _basketRepositoryStub.Stub(r => r.Get(Arg<int>.Is.Anything)).Return(_basketStub);
+
+            _basketService = new BasketService(_basketRepositoryStub);
+            _basketService.AddItem(1, 5);
             Console.WriteLine();
         }
 
         [Test]
         public void When_AddItem_is_called_then_adds_item()
         {
-            _basket.AddItem();
+            _basketService.AddItem(1, 5);
 
-            _basketRepository.AssertWasCalled(r => r.AddItem());
+            _basketStub.AssertWasCalled(b => b.AddItem(5));
         }
 
         [Test]
         public void When_AddItem_is_called_then_does_not_change_state()
         {
-            _basket.AddItem();
+            _basketService.AddItem(1, 5);
 
-            Assert.That(_basket.State, Is.EqualTo(BasketState.ContainsStuff));
+            Assert.That(_basketStub.State, Is.EqualTo(BasketState.ContainsStuff));
         }
 
         [Test]
         public void When_RemoveItem_is_called_then_removes_item()
         {
-            _basket.RemoveItem();
+            _basketService.RemoveItem(1, 5);
 
-            _basketRepository.AssertWasCalled(r => r.RemoveItem());
+            _basketStub.AssertWasCalled(b => b.RemoveItem(5));
         }
 
         [Test]
-        public void When_RemoveItem_is_called_if_item_count_is_1_then_changes_state_to_Empty()
+        public void When_RemoveItem_is_called_if_remaining_item_count_is_0_then_changes_state_to_Empty()
         {
-            _basket.RemoveItem();
+            _basketStub.Stub(b => b.ItemCount).Return(0);
 
-            Assert.That(_basket.State, Is.EqualTo(BasketState.Empty));
+            _basketService.RemoveItem(1, 5);
+
+            Assert.That(_basketStub.State, Is.EqualTo(BasketState.Empty));
         }
 
         [Test]
-        public void When_RemoveItem_is_called_if_item_count_is_greater_than_1_then_does_not_change_state()
+        public void When_RemoveItem_is_called_if_remaining_item_count_is_greater_than_0_then_does_not_change_state()
         {
-            _basket.AddItem();
-            _basket.RemoveItem();
+            _basketStub.Stub(b => b.ItemCount).Return(1);
 
-            Assert.That(_basket.State, Is.EqualTo(BasketState.ContainsStuff));
+            _basketService.RemoveItem(1, 5);
+
+            Assert.That(_basketStub.State, Is.EqualTo(BasketState.ContainsStuff));
         }
 
         [Test]
         public void When_Checkout_is_called_then_checks_out()
         {
-            _basket.Checkout();
+            _basketService.Checkout(1);
 
-            _basketRepository.AssertWasCalled(r => r.Checkout());
+            _basketStub.AssertWasCalled(b => b.CheckOut());
         }
 
         [Test]
         public void When_Checkout_is_called_then_changes_state_to_CheckedOut()
         {
-            _basket.Checkout();
+            _basketService.Checkout(1);
 
-            Assert.That(_basket.State, Is.EqualTo(BasketState.CheckedOut));
+            Assert.That(_basketStub.State, Is.EqualTo(BasketState.CheckedOut));
         }
 
         [Test]
         public void When_Archive_is_called_then_archives()
         {
-            _basket.Archive();
+            _basketService.Archive(1);
 
-            _basketRepository.AssertWasCalled(r => r.Archive());
+            _basketStub.AssertWasCalled(b => b.Archive());
         }
 
         [Test]
         public void When_Archive_is_called_then_changes_state_to_Archived()
         {
-            _basket.Archive();
+            _basketService.Archive(1);
 
-            Assert.That(_basket.State, Is.EqualTo(BasketState.Archived));
+            Assert.That(_basketStub.State, Is.EqualTo(BasketState.Archived));
         }
     }
 }

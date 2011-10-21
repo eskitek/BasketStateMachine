@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Basket.cs" />
+    <Compile Include="BasketService.cs" />
     <Compile Include="BasketForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,7 +75,7 @@
       <DependentUpon>BasketForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BasketRepository.cs" />
-    <Compile Include="IBasket.cs" />
+    <Compile Include="IBasketService.cs" />
     <Compile Include="IBasketRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

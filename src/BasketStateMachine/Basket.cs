@@ -1,78 +1,60 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace BasketStateMachine
 {
+    public interface IBasket
+    {
+        int Id { get; set; }
+        BasketState State { get; set; }
+        int ItemCount { get; }
+        void AddItem(int itemId);
+        void RemoveItem(int itemId);
+        void CheckOut();
+        void Archive();
+    }
+
     public class Basket : IBasket
     {
-        private readonly IBasketRepository _basketRepository;
+        public int Id { get; set; }
+        public IList<BasketItem> Items { get; set; }
+        public BasketState State { get; set; }
 
-        private int _itemCount;
+        public virtual int ItemCount { get { return Items.Count; } }
 
-        private BasketState _state;
-
-        public BasketState State
+        public Basket()
         {
-            get { return _state; }
-            private set
+            Items = new List<BasketItem>();
+        }
+
+        public virtual void AddItem(int itemId)
+        {
+            var item = new BasketItem { Id = itemId };
+            Items.Add(item);
+        }
+
+        public virtual void RemoveItem(int itemId)
+        {
+            var itemToRemove = Items.FirstOrDefault(item => item.Id == itemId);
+
+            if (itemToRemove != null)
             {
-                if(_state == value)
-                {
-                    return;
-                }
-                _state = value;
-                Console.Out.WriteLine(string.Format(">>State changed to {0}.", _state));
+                Items.Remove(itemToRemove);
             }
         }
 
-        public Basket(IBasketRepository basketRepository)
+        public virtual void CheckOut()
         {
-            _basketRepository = basketRepository;
+
         }
 
-        public void AddItem()
+        public virtual void Archive()
         {
-            Console.Out.WriteLine("Basket.AddItem called.");
-
-            if (State == BasketState.Empty ||
-                State == BasketState.ContainsStuff)
-            {
-                _basketRepository.AddItem();
-                _itemCount++;
-                State = BasketState.ContainsStuff;
-            }
         }
+    }
 
-        public void RemoveItem()
-        {
-            Console.Out.WriteLine("Basket.RemoveItem called.");
-            if (State == BasketState.ContainsStuff)
-            {
-                _basketRepository.RemoveItem();
-                _itemCount--;
-
-                if (_itemCount == 0)
-                {
-                    State = BasketState.Empty;
-                }
-            }
-        }
-
-        public void Checkout()
-        {
-            Console.Out.WriteLine("Basket.Checkout called.");
-
-            if (State == BasketState.ContainsStuff)
-            {
-                _basketRepository.Checkout();
-                State = BasketState.CheckedOut;
-            }
-        }
-
-        public void Archive()
-        {
-            Console.Out.WriteLine("Basket.Archive called.");
-            _basketRepository.Archive();
-            State = BasketState.Archived;
-        }
+    public class BasketItem
+    {
+        public int Id { get; set; }
     }
 }

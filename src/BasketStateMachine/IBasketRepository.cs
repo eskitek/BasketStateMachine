@@ -2,7 +2,8 @@ namespace BasketStateMachine
 {
     public interface IBasketRepository
     {
-        void AddItem();
+        IBasket Get(int basketId);
+        void Save(IBasket basket);
         void RemoveItem();
         void Checkout();
         void Archive();

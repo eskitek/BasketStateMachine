@@ -7,18 +7,20 @@ namespace BasketStateMachine.Unit.Tests
     [TestFixture]
     public class Given_that_state_is_CheckedOut
     {
-        private IBasket _basket;
-        private IBasketRepository _basketRepositoryMock;
+        private IBasketService _basketService;
+        private IBasketRepository _basketRepositoryStub;
+        private IBasket _basketStub;
 
         [SetUp]
         public void SetUpTest()
         {
-            Console.WriteLine(@"Setting up test");
-            _basketRepositoryMock = MockRepository.GenerateMock<IBasketRepository>();
-            _basket = new Basket(_basketRepositoryMock);
-            _basket.AddItem();
-            _basket.Checkout();
-            Assert.That(_basket.State, Is.EqualTo(BasketState.CheckedOut));
+            _basketStub = MockRepository.GenerateStub<Basket>();
+            _basketStub.State = BasketState.CheckedOut;
+
+            _basketRepositoryStub = MockRepository.GenerateStub<IBasketRepository>();
+            _basketRepositoryStub.Stub(r => r.Get(Arg<int>.Is.Anything)).Return(_basketStub);
+
+            _basketService = new BasketService(_basketRepositoryStub);
 
             Console.WriteLine();
             Console.WriteLine(@"Starting test");
@@ -27,69 +29,65 @@ namespace BasketStateMachine.Unit.Tests
         [Test]
         public void When_AddItem_is_called_then_does_not_add_item()
         {
-            _basket.AddItem();
+            _basketService.AddItem(1, 5);
 
-            _basketRepositoryMock.Expect(r => r.AddItem()).Repeat.Never();
-
-            _basketRepositoryMock.VerifyAllExpectations();
+            _basketStub.AssertWasNotCalled(b => b.AddItem(5));
         }
 
         [Test]
         public void When_AddItem_is_called_then_does_not_change_state()
         {
-            _basket.AddItem();
+            _basketService.AddItem(1, 5);
 
-            Assert.That(_basket.State, Is.EqualTo(BasketState.CheckedOut));
+            Assert.That(_basketStub.State, Is.EqualTo(BasketState.CheckedOut));
         }
 
         [Test]
         public void When_RemoveItem_is_called_then_does_not_remove_item()
         {
-            _basket.RemoveItem();
+            _basketService.RemoveItem(1, 5);
 
-            _basketRepositoryMock.AssertWasNotCalled(r => r.RemoveItem());
+            _basketStub.AssertWasNotCalled(b => b.RemoveItem(5));
         }
 
         [Test]
         public void When_RemoveItem_is_called_does_not_change_state()
         {
-            _basket.RemoveItem();
+            _basketService.RemoveItem(1, 5);
 
-            Assert.That(_basket.State, Is.EqualTo(BasketState.CheckedOut));
+            Assert.That(_basketStub.State, Is.EqualTo(BasketState.CheckedOut));
         }
 
         [Test]
         public void When_Checkout_is_called_then_does_not_check_out()
         {
-            _basket.Checkout();
+            _basketService.Checkout(1);
 
-            _basketRepositoryMock.Expect(r => r.Checkout()).Repeat.Never();
-
-            _basketRepositoryMock.VerifyAllExpectations();
+            _basketStub.AssertWasNotCalled(b => b.CheckOut());
         }
 
         [Test]
         public void When_Checkout_is_called_then_does_not_change_state()
         {
-            _basket.Checkout();
+            _basketService.Checkout(1);
 
-            Assert.That(_basket.State, Is.EqualTo(BasketState.CheckedOut));
+            Assert.That(_basketStub.State, Is.EqualTo(BasketState.CheckedOut));
         }
 
         [Test]
         public void When_Archive_is_called_then_archives()
         {
-            _basket.Archive();
+            _basketService.Archive(1);
 
-            _basketRepositoryMock.AssertWasCalled(r => r.Archive());
+            _basketStub.AssertWasCalled(b => b.Archive());
         }
 
         [Test]
         public void When_Archive_is_called_then_changes_state_to_Archived()
         {
-            _basket.Archive();
+            _basketService.Archive(1);
 
-            Assert.That(_basket.State, Is.EqualTo(BasketState.Archived));
+            Assert.That(_basketStub.State, Is.EqualTo(BasketState.Archived));
         }
     }
 }

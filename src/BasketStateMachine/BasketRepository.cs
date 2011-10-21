@@ -4,9 +4,14 @@ namespace BasketStateMachine
 {
     public class BasketRepository : IBasketRepository
     {
-        public void AddItem()
+        public IBasket Get(int basketId)
         {
-            Console.Out.WriteLine("BasketRepository.AddItem called.");
+            return new Basket { Id = basketId };
+        }
+
+        public void Save(IBasket basket)
+        {
+            Console.Out.WriteLine("BasketRepository.Save called.");
         }
 
         public void RemoveItem()

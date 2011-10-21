@@ -1,93 +1,53 @@
 ﻿using System;
 using NUnit.Framework;
-using Rhino.Mocks;
 
 namespace BasketStateMachine.Unit.Tests
 {
     [TestFixture]
     public class Given_that_state_is_Archived
     {
-        private IBasketService _basketService;
-        private IBasketRepository _basketRepositoryStub;
-        private IBasket _basketStub;
+        private Basket _basket;
 
         [SetUp]
         public void SetUpTest()
         {
-            _basketStub = MockRepository.GenerateStub<Basket>();
-            _basketStub.State = BasketState.Archived;
-
-            _basketRepositoryStub = MockRepository.GenerateStub<IBasketRepository>();
-            _basketRepositoryStub.Stub(r => r.Get(Arg<int>.Is.Anything)).Return(_basketStub);
-
-            _basketService = new BasketService(_basketRepositoryStub);
+            _basket = new Basket();
+            _basket.Items.Add(new BasketItem { Id = 2 });
+            _basket.State = BasketState.Archived;
 
             Console.WriteLine();
-            Console.WriteLine(@"Starting test");
         }
 
         [Test]
-        public void When_AddItem_is_called_then_does_not_add_item()
+        public void When_AddItem_is_called_then_throws_exception()
         {
-            _basketService.AddItem(1, 5);
+            var exception = Assert.Throws<InvalidOperationException>(() => _basket.AddItem(99));
 
-            _basketStub.AssertWasNotCalled(b => b.AddItem(5));
+            Assert.That(exception.Message, Is.EqualTo(ArchivedState.ADD_ERROR_MESSAGE));
         }
 
         [Test]
-        public void When_AddItem_is_called_then_does_not_change_state()
+        public void When_RemoveItem_is_called_then_throws_exception()
         {
-            _basketService.AddItem(1, 5);
+            var exception = Assert.Throws<InvalidOperationException>(() => _basket.RemoveItem(99));
 
-            Assert.That(_basketStub.State, Is.EqualTo(BasketState.Archived));
+            Assert.That(exception.Message, Is.EqualTo(ArchivedState.REMOVE_ERROR_MESSAGE));
         }
 
         [Test]
-        public void When_RemoveItem_is_called_then_does_not_remove_item()
+        public void When_CheckOut_is_called_then_throws_exception()
         {
-            _basketService.RemoveItem(1, 5);
+            var exception = Assert.Throws<InvalidOperationException>(() => _basket.CheckOut());
 
-            _basketStub.AssertWasNotCalled(r => r.RemoveItem(5));
+            Assert.That(exception.Message, Is.EqualTo(ArchivedState.CHECKOUT_ERROR_MESSAGE));
         }
 
         [Test]
-        public void When_RemoveItem_is_called_does_not_change_state()
+        public void When_Archive_is_called_then_throws_exception()
         {
-            _basketService.RemoveItem(1, 5);
+            var exception = Assert.Throws<InvalidOperationException>(() => _basket.Archive());
 
-            Assert.That(_basketStub.State, Is.EqualTo(BasketState.Archived));
-        }
-
-        [Test]
-        public void When_Checkout_is_called_then_does_not_check_out()
-        {
-            _basketService.Checkout(1);
-
-            _basketStub.AssertWasNotCalled(b => b.CheckOut());
-        }
-
-        [Test]
-        public void When_Checkout_is_called_then_does_not_change_state()
-        {
-            _basketService.Checkout(1);
-
-            Assert.That(_basketStub.State, Is.EqualTo(BasketState.Archived));
-        }
-
-        [Test]
-        public void When_Archive_is_called_then_does_not_archive()
-        {
-            _basketService.Archive(1);
-
-            _basketStub.AssertWasNotCalled(b => b.Archive());
-        }
-
-        [Test]
-        public void When_Archive_is_called_then_does_not_change_state()
-        {
-            _basketService.Archive(1);
-
-            Assert.That(_basketStub.State, Is.EqualTo(BasketState.Archived));
+            Assert.That(exception.Message, Is.EqualTo(ArchivedState.ARCHIVE_ERROR_MESSAGE));
         }
     }
 }

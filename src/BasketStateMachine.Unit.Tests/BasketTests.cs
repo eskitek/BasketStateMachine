@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using Rhino.Mocks;
 
 namespace BasketStateMachine.Unit.Tests
 {

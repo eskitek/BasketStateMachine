@@ -6,7 +6,7 @@ namespace BasketStateMachine
 
         void RemoveItem(int basketId, int itemId);
 
-        void Checkout(int basketId);
+        void CheckOut(int basketId);
 
         void Archive(int basketId);
     }
@@ -16,6 +16,7 @@ namespace BasketStateMachine
         Empty,
         ContainsStuff,
         CheckedOut,
-        Archived
+        Archived,
+        Unknown
     }
 }

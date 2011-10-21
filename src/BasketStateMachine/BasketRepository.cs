@@ -21,7 +21,7 @@ namespace BasketStateMachine
 
         public void Checkout()
         {
-            Console.Out.WriteLine("BasketRepository.Checkout called.");
+            Console.Out.WriteLine("BasketRepository.CheckOut called.");
         }
 
         public void Archive()

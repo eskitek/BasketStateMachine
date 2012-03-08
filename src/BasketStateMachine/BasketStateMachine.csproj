@@ -71,6 +71,7 @@
     <Compile Include="BasketStates\CheckedOutState.cs" />
     <Compile Include="BasketStates\ContainsStuffState.cs" />
     <Compile Include="BasketStates\EmptyState.cs" />
+    <Compile Include="Basket_no_state_machine_example.cs" />
     <Compile Include="IBasket.cs" />
     <Compile Include="IBasketService.cs" />
     <Compile Include="IBasketRepository.cs" />

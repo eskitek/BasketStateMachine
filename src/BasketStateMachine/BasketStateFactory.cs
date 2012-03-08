@@ -9,7 +9,7 @@ namespace BasketStateMachine
             switch (basket.State)
             {
                 case BasketState.Empty:
-                    return new EmptyStateBase(basket);
+                    return new EmptyState(basket);
                 case BasketState.ContainsStuff:
                     return new ContainsStuffState(basket);
                 case BasketState.CheckedOut:

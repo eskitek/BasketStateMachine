@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Basket.cs" />
+    <Compile Include="BasketItem.cs" />
     <Compile Include="BasketService.cs" />
     <Compile Include="BasketRepository.cs" />
     <Compile Include="BasketStateFactory.cs" />
@@ -69,7 +70,7 @@
     <Compile Include="BasketStates\BasketStateBase.cs" />
     <Compile Include="BasketStates\CheckedOutState.cs" />
     <Compile Include="BasketStates\ContainsStuffState.cs" />
-    <Compile Include="BasketStates\EmptyStateBase.cs" />
+    <Compile Include="BasketStates\EmptyState.cs" />
     <Compile Include="IBasket.cs" />
     <Compile Include="IBasketService.cs" />
     <Compile Include="IBasketRepository.cs" />
